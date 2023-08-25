@@ -30,22 +30,22 @@ public class MainActivity extends ComponentActivity implements SelectListener, V
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        searchView = findViewById(R.id.search_view);
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                dialog.setTitle("Fetching news articles of" + query);
-                dialog.show();
-                RequestManager manager = new RequestManager(MainActivity.this);
-                manager.getNewsHeadlines(listener, "general", query);
-                return true;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                return false;
-            }
-        });
+//        searchView = findViewById(R.id.search_view);
+//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//            @Override
+//            public boolean onQueryTextSubmit(String query) {
+//                dialog.setTitle("Fetching news articles of" + query);
+//                dialog.show();
+//                RequestManager manager = new RequestManager(MainActivity.this);
+//                manager.getNewsHeadlines(listener, "general", query);
+//                return true;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextChange(String newText) {
+//                return false;
+//            }
+//        });
 
         dialog = new ProgressDialog(this);
         dialog.setTitle("Fetching news articles..");
